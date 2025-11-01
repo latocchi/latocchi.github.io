@@ -10,10 +10,10 @@ const Navbar = () => {
             <Button type="button" onClick={() => navigate("/")}>Home</Button>
           </li>
           <li className="border border-black rounded-lg">
-            <Button type="button" onClick={() => navigate("/about")}>About</Button>
+            <Button type="button" onClick={() => navigate("/projects")}>Projects</Button>
           </li>
           <li className="border border-black rounded-lg">
-            <Button type="button" onClick={() => navigate("/projects")}>Projects</Button>
+            <Button type="button" onClick={() => navigate("/about")}>About</Button>
           </li>
         </ul>
     </nav>
