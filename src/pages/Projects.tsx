@@ -2,6 +2,9 @@ import ProjectCard from "@/components/ProjectCard"
 import type { GitHubRepo } from "@/interface"
 import { useEffect, useState } from "react"
 
+// TODO: Add loading animation
+// TODO: Fix the aesthetics of the project cards
+
 const Projects = () => {
   const [projects, setProjects] = useState<GitHubRepo[]>([])
   const [loading, setLoading] = useState(false)
@@ -15,13 +18,16 @@ const Projects = () => {
       }
 
       const data = await response.json()
-      const repos: GitHubRepo[] = data.map((repo: any) => ({
-        name: repo.name,
-        description: repo.description,
-        html_url: repo.html_url,
-        language: repo.language,
-        updated_at: repo.updated_at,
-      }))
+      const repos: GitHubRepo[] = data
+        .filter((repo: any) => !repo.fork && !repo.archived && repo.name !== "latocchi.github.io")
+        .map((repo: any) => ({
+          name: repo.name,
+          description: repo.description,
+          html_url: repo.html_url,
+          language: repo.language,
+          updated_at: new Date(repo.updated_at),
+        }))
+        .sort((a: GitHubRepo, b: GitHubRepo) => b.updated_at.getTime() - a.updated_at.getTime())
       setProjects(repos)
     } catch (err: any) {
       console.error(err)
@@ -29,7 +35,6 @@ const Projects = () => {
     } finally {
       setLoading(false)
     }
-    
   }
 
   useEffect(() => {
@@ -41,7 +46,12 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
         {projects.length === 0 && <p>No public repos found</p>}
         {projects.map((repo: GitHubRepo) => (
-          <ProjectCard key={repo.html_url} title={repo.name} language={repo.language} description={repo.description} />
+          <ProjectCard key={repo.html_url} 
+            title={repo.name} 
+            language={repo.language} 
+            description={repo.description} 
+            html_url={repo.html_url} 
+          />
         ))}
       </div>
     </div>

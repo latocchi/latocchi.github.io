@@ -2,6 +2,7 @@ export interface ProjectCardProps {
     title: string;
     description: string
     language: string
+    html_url: string
 }
 
 export interface GitHubRepo {
@@ -9,5 +10,5 @@ export interface GitHubRepo {
     description: string;
     html_url: string;
     language: string;
-    updated_at: string;
+    updated_at: Date;
 }
