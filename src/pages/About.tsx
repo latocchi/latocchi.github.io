@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/tooltip"
 import toast, { Toaster } from 'react-hot-toast';
 import { FaFilePdf } from "react-icons/fa6";
-
+import cIcon from '../assets/icons8-c-programming.svg'
 
 const About = () => {
   const myEmail = 'jaycybanaga@gmail.com'
@@ -30,16 +30,16 @@ const About = () => {
   return (
     <div className='flex h-full w-full'>
       <Toaster position='top-right' />
-      <div className='flex flex-col items-center justify-center gap-2 p-5 border border-black'>
+      <div className='flex flex-col items-center justify-center gap-2 ml-10 p-5'>
         <div className="w-80 aspect-square overflow-hidden rounded-full m-5">
           <img className="w-full h-full object-cover object-top" src={gradpic} alt="Jaycy's Graduation Picture" />
         </div>
         <div className='flex flex-col mt-4 items-center justify-center font-medium'>
-          <span className='text-xl'>Jaycy Ivan Bañaga</span>
-          <span className='text-lg'>Bachelor of Science in Computer Engineering</span>
+          <span className='text-2xl'>Jaycy Ivan Bañaga</span>
+          <span className='text-lg text-center'>Bachelor of Science in Computer Engineering</span>
         </div>
         <Separator className='bg-gray-500 my-5' orientation='horizontal'/>
-        <div className='flex gap-10 justify-center'>
+        <div className='flex gap-6 justify-center'>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
@@ -147,7 +147,348 @@ const About = () => {
         </div>
       </div>
       <div>
-        <h1 className='text-4xl font-bold mb-4'>About Me</h1>
+        <div className='m-10'>
+          <h1 className='text-4xl font-bold'>About Me</h1>
+          <div className='mt-5 font-normal'>
+            <p>
+              Hi, I am Jaycy Ivan Bañaga, a Computer Engineering graduate from the Rizal Technological University
+              with a strong interest in <span className='font-bold'>software development</span>, <span className='font-bold'>embedded systems</span>, 
+              and <span className='font-bold'>IoT technologies</span>. I enjoy creating designing and developing solutions that connect hardware and software,
+              from microcontroller programming to building web applications and command line tools. My interests includes <span className='font-bold'>embedded systems</span>,
+              <span className='font-bold'> backend development</span>, and <span className='font-bold'>automation</span>. I'm always exploring ways to make technology
+              simpler and more accessible. My expertise includes programming languages such as <span className='font-bold'>C</span>, <span className='font-bold'>Python</span>,
+              and <span className='font-bold'>JavaScript/TypeScript</span>, and I'm currently expanding my skills in <span className='font-bold'>Go</span> and modern
+              web frameworks.
+            </p>
+          </div>
+          <div className='mt-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+              <div>
+                <h2 className='text-2xl font-bold'>Languages</h2>
+                <div className='flex gap-2'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.c-language.org/', '_blank')}
+                      >
+                        <img className='size-14' src={cIcon} alt="" />
+                        <span className="sr-only">C language</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>C language</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.python.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        <span className="sr-only">Python</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Python</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://html.spec.whatwg.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        <span className="sr-only">HTML5</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>HTML5</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.w3.org/Style/CSS/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        <span className="sr-only">CSS3</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>CSS3</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                        <span className="sr-only">Javascript</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Javascript</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.typescriptlang.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                        <span className="sr-only">Typescript</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Typescript</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+              <div>
+                <h2 className='text-2xl font-bold'>I'm currently learning</h2>
+                <div className='flex gap-2'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://go.dev/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
+                        <span className="sr-only">Go language</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Go language</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
+              <div>
+                <h2 className='text-2xl font-bold'>Frameworks</h2>
+                <div className='flex gap-2'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://fastapi.tiangolo.com/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" />
+                        <span className="sr-only">FastAPI</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>FastAPI</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://react.dev/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                        <span className="sr-only">React</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>React</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://vuejs.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" />
+                        <span className="sr-only">Vue.js</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Vue.js</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://tailwindcss.com/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                        <span className="sr-only">Tailwind CSS</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Tailwind CSS</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.htmlw', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/espressif.svg" />
+                        <span className="sr-only">ESP-IDFv</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>ESP-IDF</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+              <div>
+                <h2 className='text-2xl font-bold'>Database</h2>
+                <div className='flex gap-2'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.postgresql.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+                        <span className="sr-only">PostgreSQL</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>PostgreSQL</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.mysql.com/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                        <span className="sr-only">MySQL</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>MySQL</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+            </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
+              <div>
+                <h2 className='text-2xl font-bold'>Tools & Platforms</h2>
+                <div className='flex gap-2'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://git-scm.com/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                        <span className="sr-only">Git</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Git</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.docker.com/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
+                        <span className="sr-only">Docker</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Docker</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.kicad.org/', '_blank')}
+                      >
+                        <img className='w-full h-full object-cover transform scale-190 transition-transform' src="https://community.aisler.net/uploads/default/original/1X/bd76c59d8985e3e96370e5054eefa3a62f9be00f.png" />
+                        <span className="sr-only">KiCAD</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>KiCAD</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.kicad.org/', '_blank')}
+                      >
+                        <img className='w-full h-full object-cover transform scale-140 transition-transform' src="https://www.st.com/content/ccc/fragment/product_related/rpn_information/recommended_cards_logos/group0/ba/7d/11/3d/d9/a8/4e/41/STM32CubeMX/files/STM32CubeMX.jpg/jcr:content/translations/en.STM32CubeMX.jpg" />
+                        <span className="sr-only">STM32CubeMX</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>STM32CubeMX</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.microsoft.com/en-us/windows?r=1', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-windows.svg" />
+                        <span className="sr-only">Windows</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Windows</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.linux.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linux.svg" />
+                        <span className="sr-only">Linux</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Linux</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button
+                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        onClick={() => window.open('https://www.fedoraproject.org/', '_blank')}
+                      >
+                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/fedora.svg" />
+                        <span className="sr-only">Fedora</span>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Fedora</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   )
