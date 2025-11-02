@@ -343,7 +343,7 @@ const About = () => {
                     <TooltipTrigger asChild>
                       <Button
                         className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
-                        onClick={() => window.open('https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.htmlw', '_blank')}
+                        onClick={() => window.open('https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html', '_blank')}
                       >
                         <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/espressif.svg" />
                         <span className="sr-only">ESP-IDF</span>
