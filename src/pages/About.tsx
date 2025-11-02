@@ -28,26 +28,29 @@ const About = () => {
   }
 
   return (
-    <div className='flex h-full w-full'>
+    <div className='h-full w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-5'>
       <Toaster position='top-right' />
-      <div className='flex flex-col items-center justify-center gap-2 ml-10 p-5'>
-        <div className="w-80 aspect-square overflow-hidden rounded-full m-5">
+      {/* Profile Column */}
+      <aside className='flex flex-col items-center gap-2 p-2 md:col-span-2 md:top-6 lg:col-span-1'>
+        <div className="w-60 md:w-70 lg:w-80 aspect-square overflow-hidden rounded-full m-5">
           <img className="w-full h-full object-cover object-top" src={gradpic} alt="Jaycy's Graduation Picture" />
         </div>
         <div className='flex flex-col mt-4 items-center justify-center font-medium'>
-          <span className='text-2xl'>Jaycy Ivan Bañaga</span>
-          <span className='text-lg text-center'>Bachelor of Science in Computer Engineering</span>
+          <span className='text-3xl md:text-3xl lg:text-3xl'>Jaycy Ivan Bañaga</span>
+          <span className='text-xl md:text-xl lg:text-2xl text-center'>Bachelor of Science in Computer Engineering</span>
         </div>
         <Separator className='bg-gray-500 my-5' orientation='horizontal'/>
-        <div className='flex gap-6 justify-center'>
+        <div className='flex gap-3 md:gap-8 lg:gap-6 flex-wrap justify-center'>
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon'
                 onClick={() => window.open('https://www.linkedin.com/in/jaycybanaga', '_blank')}
               >
-                <FaLinkedin className='size-9 text-blue-500' aria-hidden="true" />
+                <span className="inline-flex items-center justify-center w-7 h-7 bg-white">
+                  <FaLinkedin className='size-9 text-blue-500' aria-hidden="true" />
+                </span>
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </TooltipTrigger>
@@ -58,11 +61,13 @@ const About = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon'
                 onClick={() => window.open('https://github.com/latocchi', '_blank')}
               >
-                <FaGithub className='size-9 text-black' aria-hidden="true" />
+                <span className="inline-flex items-center justify-center w-9 h-9 bg-white rounded-full">
+                  <FaGithub className='size-9 text-black' aria-hidden="true" />
+                </span>
                 <span className="sr-only">GitHub</span>
               </Button>
             </TooltipTrigger>
@@ -73,11 +78,13 @@ const About = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon'
                 onClick={() => window.open('https://www.facebook.com/jaycyivan31', '_blank')}
               >
-                <FaFacebook className='size-9 text-blue-600' aria-hidden="true" />
+                <span className="inline-flex items-center justify-center w-9 h-9 bg-white rounded-full">
+                  <FaFacebook className='size-9 text-blue-600' aria-hidden="true" />
+                </span>
                 <span className="sr-only">Facebook</span>
               </Button>
             </TooltipTrigger>
@@ -88,7 +95,7 @@ const About = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon' 
                 onClick={async () => {
                   try {
@@ -110,7 +117,7 @@ const About = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon'
                 onClick={async () => {
                   try {
@@ -121,7 +128,9 @@ const About = () => {
                   }
                 }}
               >
-                <FaWhatsappSquare className='size-9 text-green-500' aria-hidden="true" />
+                <span className="inline-flex items-center justify-center w-7 h-7 bg-white">
+                  <FaWhatsappSquare className='size-9 text-green-500' aria-hidden="true" />
+                </span>
                 <span className="sr-only">WhatsApp</span>
               </Button>
             </TooltipTrigger>
@@ -132,7 +141,7 @@ const About = () => {
           <Tooltip>
             <TooltipTrigger asChild>
               <Button
-                className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0'
+                className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0'
                 size='icon'
                 onClick={() => window.open('/resume.pdf', '_blank')}
               >
@@ -145,11 +154,11 @@ const About = () => {
             </TooltipContent>
           </Tooltip>
         </div>
-      </div>
-      <div>
-        <div className='m-10'>
-          <h1 className='text-4xl font-bold'>About Me</h1>
-          <div className='mt-5 font-normal'>
+      </aside>
+      <main className='md:col-span-2'>
+        <div className='m-2 mt-10'>
+          <h1 className='text-2xl md:text-2xl lg:text-4xl font-bold'>About Me</h1>
+          <div className='mt-5 font-normal text-sm lg:text-lg md:text-md'>
             <p>
               Hi, I am Jaycy Ivan Bañaga, a Computer Engineering graduate from the Rizal Technological University
               with a strong interest in <span className='font-bold'>software development</span>, <span className='font-bold'>embedded systems</span>, 
@@ -162,17 +171,17 @@ const About = () => {
             </p>
           </div>
           <div className='mt-10'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
+            <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5'>
               <div>
-                <h2 className='text-2xl font-bold'>Languages</h2>
-                <div className='flex gap-2'>
+                <h2 className='text-xl md:text-2xl lg:text-2xl font-bold'>Languages</h2>
+                <div className='flex flex-wrap gap-2'>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.c-language.org/', '_blank')}
                       >
-                        <img className='size-14' src={cIcon} alt="" />
+                        <img className='size-10 md:size-14 lg:size-16' src={cIcon} alt="" />
                         <span className="sr-only">C language</span>
                       </Button>
                     </TooltipTrigger>
@@ -183,10 +192,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.python.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
                         <span className="sr-only">Python</span>
                       </Button>
                     </TooltipTrigger>
@@ -197,10 +206,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://html.spec.whatwg.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
                         <span className="sr-only">HTML5</span>
                       </Button>
                     </TooltipTrigger>
@@ -211,10 +220,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.w3.org/Style/CSS/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
                         <span className="sr-only">CSS3</span>
                       </Button>
                     </TooltipTrigger>
@@ -225,10 +234,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
                         <span className="sr-only">Javascript</span>
                       </Button>
                     </TooltipTrigger>
@@ -239,10 +248,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.typescriptlang.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
                         <span className="sr-only">Typescript</span>
                       </Button>
                     </TooltipTrigger>
@@ -253,15 +262,15 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <h2 className='text-2xl font-bold'>I'm currently learning</h2>
+                <h2 className='text-xl md:text-2xl lg:text-2xl font-bold'>I'm currently learning</h2>
                 <div className='flex gap-2'>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://go.dev/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg" />
                         <span className="sr-only">Go language</span>
                       </Button>
                     </TooltipTrigger>
@@ -271,18 +280,16 @@ const About = () => {
                   </Tooltip>
                 </div>
               </div>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
               <div>
-                <h2 className='text-2xl font-bold'>Frameworks</h2>
-                <div className='flex gap-2'>
+                <h2 className='text-xl md:text-2xl lg:text-2xl font-bold'>Frameworks</h2>
+                <div className='flex flex-wrap gap-2'>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://fastapi.tiangolo.com/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg" />
                         <span className="sr-only">FastAPI</span>
                       </Button>
                     </TooltipTrigger>
@@ -293,10 +300,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://react.dev/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
                         <span className="sr-only">React</span>
                       </Button>
                     </TooltipTrigger>
@@ -307,10 +314,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://vuejs.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" />
                         <span className="sr-only">Vue.js</span>
                       </Button>
                     </TooltipTrigger>
@@ -321,10 +328,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://tailwindcss.com/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
                         <span className="sr-only">Tailwind CSS</span>
                       </Button>
                     </TooltipTrigger>
@@ -335,11 +342,11 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.htmlw', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/espressif.svg" />
-                        <span className="sr-only">ESP-IDFv</span>
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/espressif.svg" />
+                        <span className="sr-only">ESP-IDF</span>
                       </Button>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -349,15 +356,15 @@ const About = () => {
                 </div>
               </div>
               <div>
-                <h2 className='text-2xl font-bold'>Database</h2>
-                <div className='flex gap-2'>
+                <h2 className='text-xl md:text-2xl lg:text-2xl font-bold'>Database</h2>
+                <div className='flex flex-wrap gap-2'>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.postgresql.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" />
                         <span className="sr-only">PostgreSQL</span>
                       </Button>
                     </TooltipTrigger>
@@ -368,10 +375,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.mysql.com/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
                         <span className="sr-only">MySQL</span>
                       </Button>
                     </TooltipTrigger>
@@ -381,18 +388,16 @@ const About = () => {
                   </Tooltip>
                 </div>
               </div>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mt-5'>
               <div>
-                <h2 className='text-2xl font-bold'>Tools & Platforms</h2>
-                <div className='flex gap-2'>
+                <h2 className='text-xl md:text-2xl lg:text-2xl font-bold'>Tools & Platforms</h2>
+                <div className='flex flex-wrap gap-2'>
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://git-scm.com/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
                         <span className="sr-only">Git</span>
                       </Button>
                     </TooltipTrigger>
@@ -403,10 +408,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.docker.com/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" />
                         <span className="sr-only">Docker</span>
                       </Button>
                     </TooltipTrigger>
@@ -417,7 +422,7 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.kicad.org/', '_blank')}
                       >
                         <img className='w-full h-full object-cover transform scale-190 transition-transform' src="https://community.aisler.net/uploads/default/original/1X/bd76c59d8985e3e96370e5054eefa3a62f9be00f.png" />
@@ -431,24 +436,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
-                        onClick={() => window.open('https://www.st.com/en/development-tools/stm32cubemx.html', '_blank')}
-                      >
-                        <img className='w-full h-full object-cover transform scale-140 transition-transform' src="https://www.st.com/content/ccc/fragment/product_related/rpn_information/recommended_cards_logos/group0/ba/7d/11/3d/d9/a8/4e/41/STM32CubeMX/files/STM32CubeMX.jpg/jcr:content/translations/en.STM32CubeMX.jpg" />
-                        <span className="sr-only">STM32CubeMX</span>
-                      </Button>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>STM32CubeMX</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.microsoft.com/en-us/windows?r=1', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-windows.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-windows.svg" />
                         <span className="sr-only">Windows</span>
                       </Button>
                     </TooltipTrigger>
@@ -459,10 +450,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.linux.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linux.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linux.svg" />
                         <span className="sr-only">Linux</span>
                       </Button>
                     </TooltipTrigger>
@@ -473,10 +464,10 @@ const About = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Button
-                        className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
+                        className='inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-10 md:size-14 lg:size-16'
                         onClick={() => window.open('https://www.fedoraproject.org/', '_blank')}
                       >
-                        <img className='size-14' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/fedora.svg" />
+                        <img className='size-10 md:size-14 lg:size-16' src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/fedora.svg" />
                         <span className="sr-only">Fedora</span>
                       </Button>
                     </TooltipTrigger>
@@ -489,7 +480,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

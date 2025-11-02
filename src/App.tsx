@@ -3,10 +3,12 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Projects from "./pages/Projects";
+import { ThemeProvider } from "@/components/theme-provider"
 
 function App() {
 
   return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
     <Router>
       <div className="min-h-screen flex flex-col">
         <Navbar />
@@ -19,6 +21,7 @@ function App() {
         </main>
       </div>
     </Router>
+    </ThemeProvider>
   )
 }
 
