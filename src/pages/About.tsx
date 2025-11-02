@@ -432,7 +432,7 @@ const About = () => {
                     <TooltipTrigger asChild>
                       <Button
                         className='inline-flex items-center gap-2 bg-white hover:bg-white p-0 m-0 size-14'
-                        onClick={() => window.open('https://www.kicad.org/', '_blank')}
+                        onClick={() => window.open('https://www.st.com/en/development-tools/stm32cubemx.html', '_blank')}
                       >
                         <img className='w-full h-full object-cover transform scale-140 transition-transform' src="https://www.st.com/content/ccc/fragment/product_related/rpn_information/recommended_cards_logos/group0/ba/7d/11/3d/d9/a8/4e/41/STM32CubeMX/files/STM32CubeMX.jpg/jcr:content/translations/en.STM32CubeMX.jpg" />
                         <span className="sr-only">STM32CubeMX</span>
