@@ -18,7 +18,7 @@ const ProjectCard = ({ title, language, description, html_url }: ProjectCardProp
         <p>{description}</p>
       </CardContent>
       <CardFooter>
-        <a href={html_url}>View on GitHub</a>
+        <a href={html_url} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline">View on GitHub</a>
       </CardFooter>
     </Card>
   )
