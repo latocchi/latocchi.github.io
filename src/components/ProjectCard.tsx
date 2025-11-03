@@ -8,13 +8,14 @@ import {
 } from "@/components/ui/card"
 import type { ProjectCardProps } from "@/interface"
 const ProjectCard = ({ title, language, description, html_url }: ProjectCardProps) => {
+  const normalized_title = title.replace(/_/g, " ");
   return (
-    <Card className="w-full max-w-full bg-myrtle-green">
+    <Card className="bg-myrtle-green">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle className="whitespace-normal break-words">{normalized_title}</CardTitle>
         <CardDescription className="text-gray-200 italic">{language}</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-1">
         <p>{description}</p>
       </CardContent>
       <CardFooter>

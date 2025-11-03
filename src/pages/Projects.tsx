@@ -1,4 +1,5 @@
 import ProjectCard from "@/components/ProjectCard"
+import { Spinner } from "@/components/ui/spinner"
 import type { GitHubRepo } from "@/interface"
 import { useEffect, useState } from "react"
 
@@ -43,6 +44,11 @@ const Projects = () => {
 
   return (
     <div className="h-full w-full">
+      {loading && (
+        <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
+          <Spinner className="size-24" />
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
         {projects.length === 0 && <p>No public repos found</p>}
         {projects.map((repo: GitHubRepo) => (

@@ -1,4 +1,6 @@
 
+// TODO: implement Home page
+
 const Home = () => {
   return (
     <div>Home</div>
