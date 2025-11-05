@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import cIcon from "../assets/icons8-c-programming.svg";
 import TechCarousel from "@/components/TechCarousel";
+import ContactForm from "@/components/ContactForm";
+import { Toaster } from "react-hot-toast";
 
 const technologies = [
   {
@@ -162,10 +164,11 @@ const Home = () => {
           <Spinner className="size-24" />
         </div>
       )}
+      <Toaster position="top-right" />
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold mb-5">Latest Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
-          {projects.slice(0, 3).map((repo: GitHubRepo) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 p-4">
+          {projects.slice(0, 4).map((repo: GitHubRepo) => (
             <ProjectCard
               key={repo.html_url}
               title={repo.name}
@@ -179,6 +182,9 @@ const Home = () => {
       <div className="flex flex-col items-center justify-center px-5 mt-5">
         <h1 className="text-4xl font-bold">Technologies</h1>
         <TechCarousel technologies={technologies} />
+      </div>
+      <div className="flex items-center justify-center p-5">
+        <ContactForm />
       </div>
     </div>
   );
