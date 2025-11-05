@@ -1,11 +1,11 @@
 // TODO: implement Home page
 // TODO: add icon to website title
-import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/ProjectCard";
 import type { GitHubRepo } from "@/interface";
 import { useState, useEffect } from "react";
 import { Spinner } from "@/components/ui/spinner";
 import cIcon from "../assets/icons8-c-programming.svg";
+import TechCarousel from "@/components/TechCarousel";
 
 const technologies = [
   {
@@ -32,6 +32,82 @@ const technologies = [
     name: "Javascript",
     website: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+  },
+  {
+    name: "Typescript",
+    website: "https://www.typescriptlang.org/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+  },
+  {
+    name: "Go",
+    website: "https://go.dev/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
+  },
+  {
+    name: "FastAPI",
+    website: "https://fastapi.tiangolo.com/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg",
+  },
+  {
+    name: "React",
+    website: "https://react.dev/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+  },
+  {
+    name: "Vue",
+    website: "https://vuejs.org/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+  },
+  {
+    name: "Tailwind CSS",
+    website: "https://tailwindcss.com/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+  },
+  {
+    name: "ESP-IDF",
+    website:
+      "https://docs.espressif.com/projects/esp-idf/en/stable/esp32/get-started/index.html",
+    icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/espressif.svg",
+  },
+  {
+    name: "PostgreSQL",
+    website: "https://www.postgresql.org/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+  },
+  {
+    name: "MySQL",
+    website: "https://www.mysql.com/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "Git",
+    website: "https://git-scm.com/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+  },
+  {
+    name: "Docker",
+    website: "https://www.docker.com/",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+  },
+  {
+    name: "KiCad",
+    website: "https://www.kicad.org/",
+    icon: "https://community.aisler.net/uploads/default/original/1X/bd76c59d8985e3e96370e5054eefa3a62f9be00f.png",
+  },
+  {
+    name: "Windows",
+    website: "https://www.microsoft.com/en-us/windows?r=1",
+    icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/microsoft-windows.svg",
+  },
+  {
+    name: "Linux",
+    website: "https://www.linux.org/",
+    icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/linux.svg",
+  },
+  {
+    name: "Fedora",
+    website: "https://www.fedoraproject.org/",
+    icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/fedora.svg",
   },
 ];
 
@@ -86,7 +162,7 @@ const Home = () => {
           <Spinner className="size-24" />
         </div>
       )}
-      <div className="flex flex-col items-center justify-center border border-white">
+      <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold mb-5">Latest Projects</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
           {projects.slice(0, 3).map((repo: GitHubRepo) => (
@@ -100,43 +176,9 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-4xl font-bold mb-5">Technologies</h1>
-        {/* <div className="w-full bg-gray-500">
-          <Carousel
-            setApi={setApi}
-            className="w-full max-w-2xl"
-            opts={{
-              loop: true,
-              align: "start",
-            }}
-            draggable={false}
-          >
-            <CarouselContent className="py-3">
-              {technologies.map((tech, index) => (
-                <CarouselItem
-                  key={index}
-                  className="basis-1/4"
-                  draggable={false}
-                >
-                  <Button
-                    className="inline-flex items-center gap-2 bg-transparent hover:bg-transparent p-0 m-0 size-14 md:size-14 lg:size-16"
-                    onClick={() => window.open(tech.website, "_blank")}
-                    onMouseDown={(e) => e.preventDefault()}
-                    draggable={false}
-                  >
-                    <img
-                      className="size-14 md:size-14 lg:size-16"
-                      src={tech.icon}
-                      draggable={false}
-                    />
-                    <span className="sr-only">{tech.name}</span>
-                  </Button>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
-        </div> */}
+      <div className="flex flex-col items-center justify-center px-5">
+        <h1 className="text-4xl font-bold">Technologies</h1>
+        <TechCarousel technologies={technologies} />
       </div>
     </div>
   );

@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-prussian-blue: #1C3144;
-  --color-sunglow: #FFCB47;
+  --color-prussian-blue: #1c3144;
+  --color-sunglow: #ffcb47;
   --color-myrtle-green: #508484;
 }
 
@@ -85,7 +85,7 @@
 .dark {
   --background: rgb(34, 34, 34);
   --foreground: oklch(0.985 0 0);
-  --card: #16476A;
+  --card: #16476a;
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
@@ -123,4 +123,28 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@layer utilities {
+  /* Define the scrolling motion */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-50% - 20px));
+    }
+  }
+
+  /* Attach animation */
+  .animate-infinite-scroll {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Optional: pause when hovering */
+  /* .animate-scroll:hover {
+    animation-play-state: paused;
+  } */
 }
