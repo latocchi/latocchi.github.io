@@ -32,7 +32,7 @@ const About = () => {
       <Toaster position='top-right' />
       {/* Profile Column */}
       <aside className='flex flex-col items-center gap-2 p-2 md:col-span-2 md:top-6 lg:col-span-1'>
-        <div className="w-60 md:w-70 lg:w-80 aspect-square overflow-hidden rounded-full m-5">
+        <div className="w-64 md:w-72 lg:w-80 aspect-square overflow-hidden rounded-full m-5">
           <img className="w-full h-full object-cover object-top" src={gradpic} alt="Jaycy's Graduation Picture" />
         </div>
         <div className='flex flex-col mt-4 items-center justify-center font-medium'>

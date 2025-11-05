@@ -8,6 +8,7 @@ import cIcon from "../assets/icons8-c-programming.svg";
 import TechCarousel from "@/components/TechCarousel";
 import ContactForm from "@/components/ContactForm";
 import { Toaster } from "react-hot-toast";
+import gradpic from "@/assets/gradpic.jpg";
 
 const technologies = [
   {
@@ -165,9 +166,33 @@ const Home = () => {
         </div>
       )}
       <Toaster position="top-right" />
-      <div className="flex flex-col items-center justify-center">
+
+      {/* Hero Section */}
+      <div className="bg-prussian-blue pt-10 p-5 grid grid-cols-1 grid-rows-3 lg:grid-rows-1 md:grid-cols-1 lg:grid-cols-3 gap-2">
+        <div className="row-start-1 lg:col-start-2 lg:col-span-2">
+          <h1 className="text-4xl font-bold mb-5 text-center">
+            Welcome to My Portfolio
+          </h1>
+          <p className="text-lg text-center">
+            I'm Jaycy Ivan Bañaga, I'm a passionate developer with experience in
+            various technologies.
+          </p>
+        </div>
+        <div className="flex items-center justify-center row-span-2 md:pb-10">
+          <div className="w-64 md:w-72 lg:w-80 aspect-square overflow-hidden rounded-full">
+            <img
+              className="w-full h-full object-cover object-top"
+              src={gradpic}
+              alt="Jaycy's Graduation Picture"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Latest Projects */}
+      <div className="flex flex-col items-center justify-center mt-10">
         <h1 className="text-4xl font-bold mb-5">Latest Projects</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 p-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 p-5">
           {projects.slice(0, 4).map((repo: GitHubRepo) => (
             <ProjectCard
               key={repo.html_url}
@@ -179,11 +204,15 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center px-5 mt-5">
+
+      {/* Technologies infinite scroll */}
+      <div className="flex flex-col items-center justify-center px-5 mt-10">
         <h1 className="text-4xl font-bold">Technologies</h1>
         <TechCarousel technologies={technologies} />
       </div>
-      <div className="flex items-center justify-center p-5">
+
+      {/* Contact Form */}
+      <div className="flex items-center justify-center p-5 mt-10">
         <ContactForm />
       </div>
     </div>
