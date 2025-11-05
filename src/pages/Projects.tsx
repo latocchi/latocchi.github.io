@@ -1,3 +1,4 @@
+import { LangPieChart } from "@/components/LangPieChart";
 import ProjectCard from "@/components/ProjectCard";
 import { Spinner } from "@/components/ui/spinner";
 import type { GitHubRepo } from "@/interface";
@@ -51,13 +52,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full w-full grid grid-cols-1 lg:grid-cols-4">
       {loading && (
         <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
           <Spinner className="size-24" />
         </div>
       )}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
+      <div className="col-span-1 flex flex-col items-center justify-center p-4">
+        <LangPieChart repos={projects} />
+      </div>
+      <div className="grid col-span-1 lg:col-span-3 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-4">
         {projects.length === 0 && <p>No public repos found</p>}
         {projects.map((repo: GitHubRepo) => (
           <ProjectCard

@@ -1,5 +1,3 @@
-import type { DataStrategyFunctionArgs } from "react-router-dom";
-
 export interface ProjectCardProps {
   title: string;
   description: string;

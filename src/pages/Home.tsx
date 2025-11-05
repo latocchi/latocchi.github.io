@@ -176,7 +176,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center px-5">
+      <div className="flex flex-col items-center justify-center px-5 mt-5">
         <h1 className="text-4xl font-bold">Technologies</h1>
         <TechCarousel technologies={technologies} />
       </div>
