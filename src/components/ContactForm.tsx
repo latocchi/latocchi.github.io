@@ -11,22 +11,43 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
 import toast from "react-hot-toast";
-import { useEffect } from "react";
+import { useEffect, useRef, type FormEvent } from "react";
 
 const ContactForm = () => {
   const [state, handleSubmit] = useForm("xrbonbby");
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
+
   useEffect(() => {
     if (state.succeeded) {
       toast.success("Message sent successfully!");
     }
-  }, [state.succeeded]);
+
+    if (state.errors) {
+      toast.error("Failed to send message. Please try again.");
+    }
+  }, [state.succeeded, state.errors]);
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const email = emailRef.current?.value.trim();
+    const message = messageRef.current?.value.trim();
+
+    if (!email || !message) {
+      toast.error("Please fill out both your email and message.");
+      return; // stop submission
+    }
+
+    handleSubmit(e); // proceed with Formspree submission
+  };
 
   return (
     <Card className="w-full lg:w-1/2 bg-prussian-blue">
       <CardHeader>
         <CardTitle className="text-xl">Contact Me</CardTitle>
       </CardHeader>
-      <form onSubmit={handleSubmit} className="flex flex-col">
+      <form onSubmit={onSubmit} className="flex flex-col">
         <CardContent className="flex flex-col gap-y-4">
           <div>
             <Label htmlFor="email" className="text-lg">
