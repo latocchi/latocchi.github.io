@@ -1,4 +1,3 @@
-// TODO: implement Home page
 // TODO: add icon to website title
 import ProjectCard from "@/components/ProjectCard";
 import type { GitHubRepo } from "@/interface";
@@ -9,6 +8,7 @@ import TechCarousel from "@/components/TechCarousel";
 import ContactForm from "@/components/ContactForm";
 import { Toaster } from "react-hot-toast";
 import gradpic from "@/assets/gradpic.jpg";
+import Footer from "@/components/Footer";
 
 const technologies = [
   {
@@ -117,7 +117,7 @@ const technologies = [
 const Home = () => {
   const [loading, setLoading] = useState(false);
   const [projects, setProjects] = useState<GitHubRepo[]>([]);
-
+  const myName = "Jaycy Ivan Bañaga";
   async function fetchGithubProjects(username: string) {
     try {
       setLoading(true);
@@ -168,17 +168,20 @@ const Home = () => {
       <Toaster position="top-right" />
 
       {/* Hero Section */}
-      <div className="bg-prussian-blue pt-10 p-5 grid grid-cols-1 grid-rows-3 lg:grid-rows-1 md:grid-cols-1 lg:grid-cols-3 gap-2">
-        <div className="row-start-1 lg:col-start-2 lg:col-span-2">
-          <h1 className="text-4xl font-bold mb-5 text-center">
+      <div className="bg-prussian-blue pt-10 p-5 grid grid-cols-1 grid-rows-3 lg:grid-rows-1 md:grid-cols-1 lg:grid-cols-3 gap-2 lg:pt-12 lg:pb-24">
+        {/* Welcome message */}
+        <div className="row-start-1 lg:col-start-2 lg:col-span-2 lg:flex lg:flex-col lg:justify-center lg:items-center">
+          <h1 className="text-4xl lg:text-6xl xl:text-8xl font-bold mb-5 text-center">
             Welcome to My Portfolio
           </h1>
-          <p className="text-lg text-center">
-            I'm Jaycy Ivan Bañaga, I'm a passionate developer with experience in
-            various technologies.
+          <p className="text-lg lg:text-2xl xl:text-4xl text-center">
+            I'm {myName}, I'm a passionate developer with experience in various
+            technologies.
           </p>
         </div>
-        <div className="flex items-center justify-center row-span-2 md:pb-10">
+
+        {/* Graduation Picture */}
+        <div className="flex items-center justify-center row-span-2 md:pb-10 lg:pb-0">
           <div className="w-64 md:w-72 lg:w-80 aspect-square overflow-hidden rounded-full">
             <img
               className="w-full h-full object-cover object-top"
@@ -215,6 +218,9 @@ const Home = () => {
       <div className="flex items-center justify-center p-5 mt-10">
         <ContactForm />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

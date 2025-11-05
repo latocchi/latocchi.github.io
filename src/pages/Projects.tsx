@@ -3,9 +3,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { Spinner } from "@/components/ui/spinner";
 import type { GitHubRepo } from "@/interface";
 import { useEffect, useState } from "react";
-
-// TODO: Add loading animation
-// TODO: Fix the aesthetics of the project cards
+import Footer from "@/components/Footer";
 
 const Projects = () => {
   const [projects, setProjects] = useState<GitHubRepo[]>([]);
@@ -73,6 +71,7 @@ const Projects = () => {
           />
         ))}
       </div>
+      <Footer className="lg:col-span-4" />
     </div>
   );
 };
