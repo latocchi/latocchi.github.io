@@ -11,12 +11,12 @@ import { Label } from "./ui/label";
 import { Button } from "./ui/button";
 import { Input } from "@/components/ui/input";
 import toast from "react-hot-toast";
-import { useEffect, useRef, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 
 const ContactForm = () => {
   const [state, handleSubmit] = useForm("xrbonbby");
-  const emailRef = useRef<HTMLInputElement>(null);
-  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     if (state.succeeded) {
@@ -30,9 +30,6 @@ const ContactForm = () => {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const email = emailRef.current?.value.trim();
-    const message = messageRef.current?.value.trim();
 
     if (!email || !message) {
       toast.error("Please fill out both your email and message.");
@@ -58,6 +55,8 @@ const ContactForm = () => {
               type="email"
               placeholder="Email"
               name="_replyto"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <ValidationError
               prefix="Email"
@@ -73,6 +72,8 @@ const ContactForm = () => {
               id="message"
               name="message"
               placeholder="Type your message here."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <ValidationError
               prefix="Message"
