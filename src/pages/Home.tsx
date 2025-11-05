@@ -172,7 +172,7 @@ const Home = () => {
         {/* Welcome message */}
         <div className="row-start-1 lg:col-start-2 lg:col-span-2 lg:flex lg:flex-col lg:justify-center lg:items-center">
           <h1 className="text-4xl lg:text-6xl xl:text-8xl font-bold mb-5 text-center">
-            Helo to My Portfolio
+            Welcome to My Portfolio
           </h1>
           <p className="text-lg lg:text-2xl xl:text-4xl text-center">
             I'm {myName}, I'm a passionate developer with experience in various
