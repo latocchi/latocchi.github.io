@@ -2,7 +2,7 @@ import { FaLinkedin, FaFacebook, FaGithub } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 const Footer = ({ className }: { className?: string }) => {
-  const myName = "Jaycy Ivan Banaga";
+  const myName = "Jaycy Ivan Bañaga";
   return (
     <footer className={`bg-prussian-blue p-5 mt-24 ${className}`}>
       <div className="text-center">
